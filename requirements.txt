@@ -1,0 +1,45 @@
+# Core
+streamlit>=1.32.0
+pandas>=2.2.0
+numpy>=1.26.0
+python-dotenv>=1.0.0
+
+# Data Collection
+yfinance>=0.2.37
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+lxml>=5.1.0
+python-dateutil>=2.8.0
+
+# Database
+psycopg2-binary>=2.9.9
+sqlalchemy>=2.0.0
+
+# Technical Analysis
+ta>=0.11.0
+
+# Machine Learning
+scikit-learn>=1.4.0
+xgboost>=2.0.0
+lightgbm>=4.0.0
+catboost>=1.2.0
+optuna>=3.5.0
+
+# Deep Learning (PyTorch CPU)
+torch>=2.0.0
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+# API
+fastapi>=0.110.0
+uvicorn>=0.27.0
+
+# Visualization
+plotly>=5.20.0
+
+# Scheduler
+APScheduler>=3.10.0
+
+# Utilities
+tqdm>=4.66.0
+openpyxl>=3.1.0
+pytz>=2024.1

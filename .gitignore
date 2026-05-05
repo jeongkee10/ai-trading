@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+t1/
+
+# Environment
+.env
+venv/
+
+# Models (학습 후 생성, Railway에서 재학습)
+models/saved/*.pkl
+models/saved/*.pt
+
+# Logs
+logs/
+
+# Node
+frontend/node_modules/
+frontend/.next/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
