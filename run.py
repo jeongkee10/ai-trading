@@ -45,9 +45,28 @@ def _auto_batch():
 
 
 def main():
-    cmd = sys.argv[1] if len(sys.argv) > 1 else "app"
+    cmd = sys.argv[1] if len(sys.argv) > 1 else "all"
 
-    if cmd == "app":
+    if cmd == "all":
+        import threading
+        from batch.scheduler import start_scheduler
+
+        print("[ALL] 스케줄러 + UI 동시 실행 시작...")
+        scheduler_thread = threading.Thread(target=start_scheduler, daemon=True)
+        scheduler_thread.start()
+        print("[OK] 스케줄러 백그라운드 실행 중...")
+
+        _auto_batch()
+        print("[APP] Streamlit UI 시작 (포트 8501)...")
+        subprocess.run([
+            sys.executable, "-m", "streamlit", "run",
+            "app/streamlit_app.py",
+            "--server.port", "8501",
+            "--server.address", "0.0.0.0",
+            "--theme.base", "dark",
+        ])
+
+    elif cmd == "app":
         _auto_batch()
         print("[APP] Streamlit UI 시작...")
         subprocess.run([
