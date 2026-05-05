@@ -97,7 +97,7 @@ def start_scheduler():
 
     # 일~목 17:00 - 모델 B 추론 (다음 거래일 예측)
     scheduler.add_job(job_model_b,
-                      CronTrigger(hour=17, minute=0, day_of_week="sun-thu", timezone="Asia/Seoul"),
+                      CronTrigger(hour=17, minute=0, day_of_week="sun,mon,tue,wed,thu", timezone="Asia/Seoul"),
                       id="model_b_inference", replace_existing=True)
 
     # 일요일 02:00 - 주간 모델 학습
